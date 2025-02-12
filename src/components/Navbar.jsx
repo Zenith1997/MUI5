@@ -1,5 +1,5 @@
 import MailIcon from '@mui/icons-material/Mail';
-import { AppBar, Badge, Box, InputBase, styled, Toolbar, Typography } from '@mui/material'
+import { AppBar, Avatar, Badge, Box, InputBase, styled, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import PetsIcon from '@mui/icons-material/Pets';
 import { Notifications } from '@mui/icons-material';
@@ -22,7 +22,7 @@ const Navbar = () => {
         {
           display:"flex",
           gap:"20px",
-        
+          alignItems:"center",
           borderRadius:theme.shape.borderRadius
         }));
   
@@ -43,7 +43,9 @@ const Navbar = () => {
 <Badge badgeContent={1} color="error">
   <Notifications/>
 </Badge>
+<Avatar src=''/>
   </Icons>
+ 
   </StyledToolbar>
     </AppBar>
   )
