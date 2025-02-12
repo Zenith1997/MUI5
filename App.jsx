@@ -17,11 +17,10 @@ function App() {
   }));
 
 
-  const BlueTypography = styled(Typography)(({theme})=>({
-     
+  const blueTypography = styled(Typography)(
+    (({theme})=>({
+      backgroundColor: "skyblue",
     margin:5,
-    color:theme.palette.primary.main,
-    variant:"h1",
     "&:hover": {
       backgroundColor: theme.palette.otherColor.main,
     },
@@ -29,15 +28,17 @@ function App() {
       backgroundColor:"gray",
       color:"white"
     }
-    }));
-  
+    }))
+  )
   return (
     <div>
 
-
+      <Button variant="text">Text</Button>
+      <Button variant="contained" color="secondary">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
   
-<BlueTypography>dsfkkkkkkkkkkk</BlueTypography>  
-
+<blueTypography>Hey</blueTypography>
+      <Typography>hi</Typography>
      <BlueButton>My button</BlueButton>
      <BlueButton>Another button</BlueButton>
     </div>
