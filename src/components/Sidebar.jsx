@@ -1,8 +1,5 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled, Switch } from '@mui/material'
-import React from 'react'
-import InboxIcon from '@mui/icons-material/Inbox';
 import HomeIcon from '@mui/icons-material/Home';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import { Group, GroupAddRounded, GroupAddSharp, ModeNight, Pages, Person, Person2Outlined, Person3, Person3Outlined, Settings, Shop, ShopTwo, ShopTwoOutlined } from '@mui/icons-material';
 const Sidebar = () => {
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -62,7 +59,9 @@ const Sidebar = () => {
   }));
   
   return (
-    <Box bgcolor={""}flex={1} p={2} sx={{ display:{xs:"none",sm:"block"}}}>
+    <Box  bgcolor={""}flex={1} p={2} sx={{ display:{xs:"none",sm:"block"}}}>
+   <Box position={"fixed"}>
+
     <List>
           <ListItem disablePadding>
             <ListItemButton component='a' href='#home'>
@@ -130,6 +129,7 @@ const Sidebar = () => {
           </ListItem>
           
         </List>
+   </Box>
     </Box>
   )
 }
