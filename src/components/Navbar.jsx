@@ -4,16 +4,22 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   InputBase,
+  Menu,
+  MenuItem,
   styled,
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
+
 import PetsIcon from "@mui/icons-material/Pets";
 import SearchIcon from '@mui/icons-material/Search';
 import { Notifications } from "@mui/icons-material";
+import IconMenu from "./IconMenu";
+import { useState } from "react";
 const Navbar = () => {
+const [open, setOpen] = useState(true);
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -65,13 +71,43 @@ const Navbar = () => {
           <Badge badgeContent={1} color="error">
             <Notifications />
           </Badge>
-          <Avatar sx={{ width: "30px", height: "30px" }} src="" />
+          <Button onClick={() => setOpen((prev) => !prev)}>
+      
+          <Avatar     sx={{ width: "30px", height: "30px" }} src="" />
+          <Menu
+          sx={{marginTop:"50px"}}
+         id="demo-positioned-menu"
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        onClose={""}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
+          </Button>
+          
         </Icons>
         <UserBox>
           <Avatar sx={{ width: "30px", height: "30px" }} src="" />
           <Typography variant="span">John</Typography>
+       
         </UserBox>
+ 
+      
+     
       </StyledToolbar>
+   
     </AppBar>
   );
 };
