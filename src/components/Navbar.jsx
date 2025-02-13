@@ -16,10 +16,9 @@ import {
 import PetsIcon from "@mui/icons-material/Pets";
 import SearchIcon from '@mui/icons-material/Search';
 import { Notifications } from "@mui/icons-material";
-import IconMenu from "./IconMenu";
 import { useState } from "react";
 const Navbar = () => {
-const [open, setOpen] = useState(true);
+const [open, setOpen] = useState(false);
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -71,10 +70,11 @@ const [open, setOpen] = useState(true);
           <Badge badgeContent={1} color="error">
             <Notifications />
           </Badge>
-          <Button onClick={() => setOpen((prev) => !prev)}>
+          <Button >
       
-          <Avatar     sx={{ width: "30px", height: "30px" }} src="" />
+          <Avatar  onClick={() => setOpen((prev) => !prev)}   sx={{ width: "30px", height: "30px" }} src="" />
           <Menu
+          
           sx={{marginTop:"50px"}}
          id="demo-positioned-menu"
         anchorOrigin={{
@@ -86,7 +86,7 @@ const [open, setOpen] = useState(true);
           horizontal: 'left',
         }}
         open={open}
-        onClose={""}
+        onClose={(e)=>setOpen(false)}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
