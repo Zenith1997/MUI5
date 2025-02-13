@@ -1,47 +1,24 @@
-import { Button, styled, Typography } from "@mui/material";
-import "./App.css";
-import SettingsIcon from "@mui/icons-material/Settings";
 
-function App() {
-
-  const BlueButton = styled(Button)(({theme})=>({
-    backgroundColor: "skyblue",
-    margin:5,
-    "&:hover": {
-      backgroundColor: theme.palette.otherColor.main,
-    },
-    "&:disabled":{
-      backgroundColor:"gray",
-      color:"white"
-    }
-  }));
+import Sidebar from "./components/Sidebar"
+import Rightbar from "./components/Rightbar"
+import Feed from "./components/Feed"
+import { Box, Container, Stack } from "@mui/material"
+import Navbar from "./components/Navbar"
 
 
-  const BlueTypography = styled(Typography)(({theme})=>({
-     
-    margin:5,
-    color:theme.palette.primary.main,
-    variant:"h1",
-    "&:hover": {
-      backgroundColor: theme.palette.otherColor.main,
-    },
-    "&:disabled":{
-      backgroundColor:"gray",
-      color:"white"
-    }
-    }));
-  
+
+const App = () => {
   return (
-    <div>
+    <Box>
+   <Navbar/>
+     <Stack direction={"row"} spacing={2} justifyContent={"space-between"}>
 
-
-  
-<BlueTypography>dsfkkkkkkkkkkk</BlueTypography>  
-
-     <BlueButton>My button</BlueButton>
-     <BlueButton>Another button</BlueButton>
-    </div>
-  );
+      <Sidebar/>
+      <Feed/>
+      <Rightbar/>
+     </Stack>
+    </Box>
+  )
 }
 
-export default App;
+export default App
