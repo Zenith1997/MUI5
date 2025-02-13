@@ -99,7 +99,29 @@ const [open, setOpen] = useState(false);
           
         </Icons>
         <UserBox>
-          <Avatar sx={{ width: "30px", height: "30px" }} src="" />
+          <Avatar onClick={()=>setOpen((prev)=>!prev)} sx={{ width: "30px", height: "30px" }} src="" />
+          <Menu
+          
+          sx={{marginTop:"50px"}}
+         id="demo-positioned-menu"
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        onClose={(e)=>setOpen(false)}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
           <Typography variant="span">John</Typography>
        
         </UserBox>
