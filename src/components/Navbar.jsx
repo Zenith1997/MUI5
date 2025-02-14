@@ -17,6 +17,7 @@ import PetsIcon from "@mui/icons-material/Pets";
 import SearchIcon from '@mui/icons-material/Search';
 import { Notifications } from "@mui/icons-material";
 import { useState } from "react";
+import ResponsiveDrawer from "./ResponsiveDrawer";
 const Navbar = () => {
 const [open, setOpen] = useState(false);
   const StyledToolbar = styled(Toolbar)({
@@ -58,7 +59,7 @@ const [open, setOpen] = useState(false);
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           LAMA DEV
         </Typography>
-        <PetsIcon sx={{ display: { xs: "block", sm: "none", md: "none" } }} />
+        <ResponsiveDrawer sx={{ display: { xs: "block", sm: "none", md: "none" } }} />
         <Search>
           <SearchIcon color="disabled"/>
           <InputBase placeholder="Search.." ></InputBase>
