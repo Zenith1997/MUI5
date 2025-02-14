@@ -1,6 +1,6 @@
 import React from 'react'
 import { Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Checkbox, Collapse, IconButton, styled, Typography } from '@mui/material'
-import React from 'react'
+
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
