@@ -6,7 +6,7 @@ const Feed = () => {
 
 
   return (
-    <Box flex={8} m={4} p={2}>
+    <Box flex={4} p={2}>
    <Post/>
    <Post/>
    <Post/>
