@@ -1,3 +1,4 @@
+import '@fontsource/inter';
 
 import Sidebar from "./components/Sidebar"
 import Rightbar from "./components/Rightbar"
