@@ -1,8 +1,10 @@
-import { Box, Skeleton } from "@mui/material"
+import { Box } from "@mui/material"
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import QuiltedImageList from "./QuiltedImageList";
+import TotalAvatars from "./TotalAvatars";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#endregion',
@@ -18,28 +20,19 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Rightbar = () => {
   return (
-    <Box flex={1} p={2} sx={{display:{xs:"none",sm:"block"}}}> 
+    <Box   flex={2}  p={1} sx={{display:{xs:"none",sm:"block"},justifyContent:"initial"}}> 
+
       <Box position={"fixed"}>
-      <Box sx={{ width: '100%' }}>
+  
+      <Box sx={{ width: '80%' }}>
       <Stack spacing={2}>
-      
-      {/* For variant="text", adjust the height via font-size */}
-      <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-      {/* For other variants, adjust the size with `width` and `height` */}
-      <Skeleton variant="circular" width={40} height={40} />
-      <Skeleton variant="rectangular" width={210} height={60} />
-      <Skeleton variant="rounded" width={210} height={60} />
-   
-      </Stack>
-      <Stack spacing={2}>
-      
-      {/* For variant="text", adjust the height via font-size */}
-      <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-      {/* For other variants, adjust the size with `width` and `height` */}
-      <Skeleton variant="circular" width={40} height={40} />
-      <Skeleton variant="rectangular" width={210} height={60} />
-      <Skeleton variant="rounded" width={210} height={60} />
-   
+        <Stack>
+        <TotalAvatars/>
+        </Stack>
+    
+        <Item><QuiltedImageList/></Item>
+        
+    
       </Stack>
     </Box>
       </Box>
