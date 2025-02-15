@@ -3,8 +3,10 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import QuiltedImageList from "./QuiltedImageList";
+import QuiltedImageList from "./StandardImageList";
 import TotalAvatars from "./TotalAvatars";
+import AlignItemsList from "./AlignItemsList";
+import StandardImageList from "./StandardImageList";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#endregion',
@@ -24,19 +26,27 @@ const Rightbar = () => {
 
       <Box position={"fixed"}>
   
-      <Box sx={{ width: '80%' }}>
-      <Stack spacing={2}>
-        <Stack>
+     
+   
+        <Stack p={0} spacing={-8}>
+          <Item>
+
         <TotalAvatars/>
+          </Item>
+        <Item>
+          <StandardImageList/>
+        </Item>
+        <Item>
+          <AlignItemsList/>
+        </Item>
         </Stack>
     
-        <Item><QuiltedImageList/></Item>
         
-    
-      </Stack>
+        
+
     </Box>
       </Box>
-    </Box>
+    
   )
 }
 
