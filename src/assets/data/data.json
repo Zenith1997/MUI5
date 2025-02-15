@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "cake1",
+        "description": "",
+        "img": "cake1.png"
+      },
+      {
+        "id": 2,
+        "name": "cake2",
+        "description": "",
+        "img": "cake2.png"
+      },
+      {
+        "id": 3,
+        "name": "cake3",
+        "description": "",
+        "img": "cake3.png"
+      },
+      {
+        "id": 4,
+        "name": "cake4",
+        "description": "",
+        "img": "cake4.png"
+      }
+
+]

@@ -7,7 +7,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { ExpandMore, Favorite, FavoriteBorder } from '@mui/icons-material';
-const Post = () => {
+const Post = ({name}) => {
   return (
     <div>
            <Card >
@@ -28,7 +28,7 @@ const Post = () => {
       <CardMedia
         component="img"
         height="20%"
-        image={"https://raw.githubusercontent.com/Zenith1997/MUI5/refs/heads/main/public/img/cake.png"}
+        image={`https://raw.githubusercontent.com/Zenith1997/MUI5/refs/heads/main/public/img/${name}`}
         alt="Paella dish"
         
       />
