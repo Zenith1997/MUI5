@@ -9,7 +9,7 @@ const Feed = () => {
     <Box flex={4} p={2}>
 {
   data.map((res,key)=>(
-    <Post key={key} name={res.name}/>
+    <Post key={key} name={res.img}/>
   ))
 }
   
