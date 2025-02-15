@@ -28,7 +28,7 @@ const Post = () => {
       <CardMedia
         component="img"
         height="20%"
-        image="https://i.imghippo.com/files/ewrg9493dMA.png"
+        image={"/MUI5/public/img/cake.png"}
         alt="Paella dish"
         
       />
