@@ -59,7 +59,7 @@ const Sidebar = () => {
   }));
   
   return (
-    <Box  bgcolor={""}flex={1.5} p={2} sx={{ display:{xs:"none",sm:"block",md:"none"}}}>
+    <Box  bgcolor={""}flex={1.5} p={2} sx={{ display:{xs:"none",sm:"block"}}}>
    <Box position={"fixed"}>
 
     <List>
