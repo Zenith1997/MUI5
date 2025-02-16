@@ -23,7 +23,7 @@ const [open, setOpen] = useState(false);
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+
     position: "relative",
   });
   const Search = styled("div")(({ theme }) => ({
@@ -32,7 +32,7 @@ const [open, setOpen] = useState(false);
     gap:"5px",
     alignItems:"center",
     padding: "0 10px",
-    // margin: "0 auto",
+
     borderRadius: theme.shape.borderRadius,
     width: "50%",
     position: "absolute",
@@ -67,10 +67,14 @@ const [open, setOpen] = useState(false);
           LAMA DEV
         </Typography>
         <ResponsiveDrawer sx={{ display: { xs: "block", sm: "none", md: "none" } }} />
-        <Search>
-          <SearchIcon color="disabled"/>
-          <InputBase placeholder="Search.." ></InputBase>
-        </Search>
+
+        <Box sx={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+          <Search>
+            <SearchIcon color="disabled" />
+            <InputBase placeholder="Search.." />
+          </Search>
+        </Box>
+        
         <Icons>
           <Badge badgeContent={2} color="error">
             <MailIcon />
