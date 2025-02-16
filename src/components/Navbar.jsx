@@ -13,37 +13,32 @@ import {
   Typography,
 } from "@mui/material";
 
+import PetsIcon from "@mui/icons-material/Pets";
 import SearchIcon from '@mui/icons-material/Search';
 import { Notifications } from "@mui/icons-material";
 import { useState } from "react";
 import ResponsiveDrawer from "./ResponsiveDrawer";
-
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
+const [open, setOpen] = useState(false);
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     position: "relative",
   });
-
   const Search = styled("div")(({ theme }) => ({
     backgroundColor: "white",
-    display: "flex",
-    gap: "5px",
-    alignItems: "center",
+    display:'flex',
+    gap:"5px",
+    alignItems:"center",
     padding: "0 10px",
+    // margin: "0 auto",
     borderRadius: theme.shape.borderRadius,
     width: "50%",
     position: "absolute",
     left: "50%",
-    transform: "translateX(-50%)",
-    [theme.breakpoints.down("sm")]: {
-      width: "50%",
-      padding: "0px 1px",
+    padding: "0px 1px",
       transform: "translateX(-55%) translateY(0)", // Fixed alignment
-    },
   }));
 
   const Icons = styled(Box)(({ theme }) => ({
@@ -74,7 +69,7 @@ const Navbar = () => {
         <ResponsiveDrawer sx={{ display: { xs: "block", sm: "none", md: "none" } }} />
         <Search>
           <SearchIcon color="disabled"/>
-          <InputBase placeholder="Search.." />
+          <InputBase placeholder="Search.." ></InputBase>
         </Search>
         <Icons>
           <Badge badgeContent={2} color="error">
@@ -83,57 +78,66 @@ const Navbar = () => {
           <Badge badgeContent={1} color="error">
             <Notifications />
           </Badge>
-          <Button>
-            <Avatar onClick={() => setOpen((prev) => !prev)} sx={{ width: "30px", height: "30px" }} src="" />
-            <Menu
-              sx={{ marginTop: "50px" }}
-              id="demo-positioned-menu"
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              transformOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              open={open}
-              onClose={() => setOpen(false)}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-            >
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>My account</MenuItem>
-              <MenuItem>Logout</MenuItem>
-            </Menu>
+          <Button >
+      
+          <Avatar  onClick={() => setOpen((prev) => !prev)}   sx={{ width: "30px", height: "30px" }} src="" />
+          <Menu
+          
+          sx={{marginTop:"50px"}}
+         id="demo-positioned-menu"
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        onClose={(e)=>setOpen(false)}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
           </Button>
+          
         </Icons>
         <UserBox>
-          <Avatar onClick={() => setOpen((prev) => !prev)} sx={{ width: "30px", height: "30px" }} src="" />
+          <Avatar onClick={()=>setOpen((prev)=>!prev)} sx={{ width: "30px", height: "30px" }} src="" />
           <Menu
-            sx={{ marginTop: "50px" }}
-            id="demo-positioned-menu"
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            open={open}
-            onClose={() => setOpen(false)}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-          >
-            <MenuItem>Profile</MenuItem>
-            <MenuItem>My account</MenuItem>
-            <MenuItem>Logout</MenuItem>
-          </Menu>
+          
+          sx={{marginTop:"50px"}}
+         id="demo-positioned-menu"
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        onClose={(e)=>setOpen(false)}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
           <Typography variant="span">John</Typography>
+       
         </UserBox>
+ 
+      
+     
       </StyledToolbar>
+   
     </AppBar>
   );
 };
