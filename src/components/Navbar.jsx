@@ -20,35 +20,49 @@ import { useState } from "react";
 import ResponsiveDrawer from "./ResponsiveDrawer";
 const Navbar = () => {
 const [open, setOpen] = useState(false);
-  const StyledToolbar = styled(Toolbar)({
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "10px", // Ensures spacing
+});
+
+const Search = styled("div")(({ theme }) => ({
+  backgroundColor: "white",
+  display: "flex",
+  alignItems: "center",
+  gap: "5px",
+  padding: "5px 15px",
+  borderRadius: theme.shape.borderRadius,
+  width: "40%", // Reduce width for better alignment
+  maxWidth: "500px", // Prevent excessive width on larger screens
+  position: "absolute",
+  left: "50%",
+  transform: "translateX(-50%)",
+  top: "17%", // Keeps it aligned vertically in the navbar
+  [theme.breakpoints.down("sm")]: {
+    width: "70%",  // Centering for mobile
+    maxWidth: "none",
     position: "relative",
-  });
-  const Search = styled("div")(({ theme }) => ({
-    backgroundColor: "white",
-    display:'flex',
-    gap:"5px",
-    alignItems:"center",
-    padding: "0 10px",
-    // margin: "0 auto",
-    borderRadius: theme.shape.borderRadius,
-    width: "50%",
-    position: "absolute",
-    left: "50%",
-    transform: "translateX(-50%)",
-  }));
+    left: "auto",
+    transform: "none",
+    margin: "0 auto",
+  },
+}));
+
+
+
+  
 
   const Icons = styled(Box)(({ theme }) => ({
-    display: "none",
-    gap: "20px",
+    display: "flex",
     alignItems: "center",
-    borderRadius: theme.shape.borderRadius,
-    [theme.breakpoints.up("sm")]: {
-      display: "flex",
+    gap: "10px",  // Reduce gap for better fit
+    [theme.breakpoints.down("sm")]: {
+      display: "none",  // Hide for small screens
     },
   }));
+  
 
   const UserBox = styled(Box)(({ theme }) => ({
     display: "flex",
