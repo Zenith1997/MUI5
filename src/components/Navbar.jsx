@@ -13,56 +13,48 @@ import {
   Typography,
 } from "@mui/material";
 
-import PetsIcon from "@mui/icons-material/Pets";
 import SearchIcon from '@mui/icons-material/Search';
 import { Notifications } from "@mui/icons-material";
 import { useState } from "react";
 import ResponsiveDrawer from "./ResponsiveDrawer";
+
 const Navbar = () => {
-const [open, setOpen] = useState(false);
-const StyledToolbar = styled(Toolbar)({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  gap: "10px", // Ensures spacing
-});
+  const [open, setOpen] = useState(false);
 
-const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
-  display: "flex",
-  alignItems: "center",
-  gap: "5px",
-  padding: "5px 15px",
-  borderRadius: theme.shape.borderRadius,
-  width: "40%", // Reduce width for better alignment
-  maxWidth: "500px", // Prevent excessive width on larger screens
-  position: "absolute",
-  left: "50%",
-  transform: "translateX(-50%)",
-  top: "17%", // Keeps it aligned vertically in the navbar
-  [theme.breakpoints.down("sm")]: {
-    width: "70%",  // Centering for mobile
-    maxWidth: "none",
-    position: "relative",
-    left: "auto",
-    transform: "none",
-    margin: "0 auto",
-  },
-}));
-
-
-
-  
-
-  const Icons = styled(Box)(({ theme }) => ({
+  const StyledToolbar = styled(Toolbar)({
     display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: "10px",  // Reduce gap for better fit
+    position: "relative",
+  });
+
+  const Search = styled("div")(({ theme }) => ({
+    backgroundColor: "white",
+    display: "flex",
+    gap: "5px",
+    alignItems: "center",
+    padding: "0 10px",
+    borderRadius: theme.shape.borderRadius,
+    width: "50%",
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
     [theme.breakpoints.down("sm")]: {
-      display: "none",  // Hide for small screens
+      width: "50%",
+      padding: "0px 1px",
+      transform: "translateX(-55%) translateY(0)", // Fixed alignment
     },
   }));
-  
+
+  const Icons = styled(Box)(({ theme }) => ({
+    display: "none",
+    gap: "20px",
+    alignItems: "center",
+    borderRadius: theme.shape.borderRadius,
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
+    },
+  }));
 
   const UserBox = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -82,7 +74,7 @@ const Search = styled("div")(({ theme }) => ({
         <ResponsiveDrawer sx={{ display: { xs: "block", sm: "none", md: "none" } }} />
         <Search>
           <SearchIcon color="disabled"/>
-          <InputBase placeholder="Search.." ></InputBase>
+          <InputBase placeholder="Search.." />
         </Search>
         <Icons>
           <Badge badgeContent={2} color="error">
@@ -91,66 +83,57 @@ const Search = styled("div")(({ theme }) => ({
           <Badge badgeContent={1} color="error">
             <Notifications />
           </Badge>
-          <Button >
-      
-          <Avatar  onClick={() => setOpen((prev) => !prev)}   sx={{ width: "30px", height: "30px" }} src="" />
-          <Menu
-          
-          sx={{marginTop:"50px"}}
-         id="demo-positioned-menu"
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        open={open}
-        onClose={(e)=>setOpen(false)}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem >Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem >Logout</MenuItem>
-      </Menu>
+          <Button>
+            <Avatar onClick={() => setOpen((prev) => !prev)} sx={{ width: "30px", height: "30px" }} src="" />
+            <Menu
+              sx={{ marginTop: "50px" }}
+              id="demo-positioned-menu"
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              open={open}
+              onClose={() => setOpen(false)}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem>Profile</MenuItem>
+              <MenuItem>My account</MenuItem>
+              <MenuItem>Logout</MenuItem>
+            </Menu>
           </Button>
-          
         </Icons>
         <UserBox>
-          <Avatar onClick={()=>setOpen((prev)=>!prev)} sx={{ width: "30px", height: "30px" }} src="" />
+          <Avatar onClick={() => setOpen((prev) => !prev)} sx={{ width: "30px", height: "30px" }} src="" />
           <Menu
-          
-          sx={{marginTop:"50px"}}
-         id="demo-positioned-menu"
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        open={open}
-        onClose={(e)=>setOpen(false)}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem >Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem >Logout</MenuItem>
-      </Menu>
+            sx={{ marginTop: "50px" }}
+            id="demo-positioned-menu"
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            open={open}
+            onClose={() => setOpen(false)}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem>Profile</MenuItem>
+            <MenuItem>My account</MenuItem>
+            <MenuItem>Logout</MenuItem>
+          </Menu>
           <Typography variant="span">John</Typography>
-       
         </UserBox>
- 
-      
-     
       </StyledToolbar>
-   
     </AppBar>
   );
 };
