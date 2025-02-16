@@ -23,6 +23,8 @@ const [open, setOpen] = useState(false);
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
+    position: "relative",
   });
   const Search = styled("div")(({ theme }) => ({
     backgroundColor: "white",
@@ -30,8 +32,12 @@ const [open, setOpen] = useState(false);
     gap:"5px",
     alignItems:"center",
     padding: "0 10px",
-    margin: "0px 20px",
+    // margin: "0 auto",
     borderRadius: theme.shape.borderRadius,
+    width: "50%",
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
   }));
 
   const Icons = styled(Box)(({ theme }) => ({
