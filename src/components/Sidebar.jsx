@@ -1,7 +1,8 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled, Switch } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home';
 import { Group, GroupAddRounded, GroupAddSharp, ModeNight, Pages, Person, Person2Outlined, Person3, Person3Outlined, Settings, Shop, ShopTwo, ShopTwoOutlined } from '@mui/icons-material';
-const Sidebar = () => {
+
+const Sidebar = ({ mode, setMode }) => {
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -58,11 +59,14 @@ const Sidebar = () => {
     },
   }));
   
+  const handleThemeChange = () => {
+    setMode(mode === 'light' ? 'dark' : 'light');
+  };
+  
   return (
-    <Box  bgcolor={""}flex={1.5} p={2} sx={{ display:{xs:"none",sm:"block"}}}>
-   <Box position={"fixed"}>
-
-    <List>
+    <Box bgcolor={""} flex={1.5} p={2} sx={{ display:{xs:"none",sm:"block"}}}>
+      <Box position={"fixed"}>
+        <List>
           <ListItem disablePadding>
             <ListItemButton component='a' href='#home'>
               <ListItemIcon>
@@ -124,12 +128,15 @@ const Sidebar = () => {
               <ListItemIcon>
                 <ModeNight/>
               </ListItemIcon>
-              <MaterialUISwitch defaultChecked color="default" />
+              <MaterialUISwitch 
+                checked={mode === 'dark'}
+                onChange={handleThemeChange}
+                color="default" 
+              />
             </ListItemButton>
           </ListItem>
-          
         </List>
-   </Box>
+      </Box>
     </Box>
   )
 }
