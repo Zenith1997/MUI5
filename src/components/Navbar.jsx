@@ -28,15 +28,17 @@ const [open, setOpen] = useState(false);
   });
   const Search = styled("div")(({ theme }) => ({
     backgroundColor: "white",
-    display: 'flex',
-    gap: "5px",
-    alignItems: "center",
+    display:'flex',
+    gap:"5px",
+    alignItems:"center",
+    padding: "0 10px",
+
     borderRadius: theme.shape.borderRadius,
     width: "50%",
     position: "absolute",
     left: "50%",
     padding: "0px 1px",
-    transform: "translateX(-55%) translateY(0)"
+      transform: "translateX(-55%) translateY(0)", // Fixed alignment
   }));
 
   const Icons = styled(Box)(({ theme }) => ({
